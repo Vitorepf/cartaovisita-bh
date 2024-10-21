@@ -25,44 +25,51 @@
             <a href="https://www.instagram.com/bodyharmony.gyn/" target="_blank" rel="noopener noreferrer" title="Visite nosso Instagram">
                 <img src="assets/instagram.png" alt="Instagram - Body Harmony">
             </a>
-            <!-- Botão de mapa com opções -->
-<!-- Botão de mapa que abre o modal -->
-<a href="#" onclick="openModal(event)" title="Veja nossa localização no mapa">
-    <img src="assets/google-maps.png" alt="Localização no mapa">
-</a>
+            <!-- Botão de mapa que abre o modal -->
+            <a href="#" onclick="openModal(event)" title="Veja nossa localização no mapa">
+                <img src="assets/google-maps.png" alt="Localização no mapa">
+            </a>
+        </div>
 
-</div>
+    </div>
 
-<!-- Modal para opções de mapa -->
-<div id="mapModal" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <span class="close-button" onclick="closeModal()">&times;</span>
-      <h2>Escolha o aplicativo de mapas:</h2>
-      <div class="modal-buttons">
-        <a href="https://waze.com/ul?q=Body%20Harmony%20Goiânia%20GO&navigate=yes" target="_blank" rel="noopener noreferrer">
-          <img src="assets/waze.png" alt="Waze">
-          <span>Abrir no Waze</span>
-        </a>
-        <a href="https://maps.google.com/?q=Body+Harmony+Goiânia+GO" target="_blank" rel="noopener noreferrer">
-          <img src="assets/google-maps.png" alt="Google Maps">
-          <span>Abrir no Google Maps</span>
-        </a>
+    <!-- Modal para opções de aplicativo -->
+    <div id="mapModal" class="modal" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Escolha o aplicativo:</h2>
+        <div class="modal-buttons">
+          <!-- Link do Waze com navegação iniciada -->
+          <a href="https://waze.com/ul?ll=-16.6839,-49.2569&navigate=yes" target="_blank" rel="noopener noreferrer">
+            <img src="assets/waze.png" alt="Waze">
+            <span>Abrir no Waze</span>
+          </a>
+          <!-- Link do Google Maps com navegação iniciada -->
+          <a href="https://www.google.com/maps/dir/?api=1&destination=-16.6839,-49.2569" target="_blank" rel="noopener noreferrer">
+            <img src="assets/google-maps.png" alt="Google Maps">
+            <span>Abrir no Google Maps</span>
+          </a>
+          <!-- Link para chamar um Uber -->
+          <a href="#" onclick="openUber(event)" target="_blank" rel="noopener noreferrer">
+            <img src="assets/uber.png" alt="Uber">
+            <span>Chamar um Uber</span>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <script>
+
+    <script>
     function openModal(event) {
       event.preventDefault();
       document.getElementById('mapModal').style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
-    
+
     function closeModal() {
       document.getElementById('mapModal').style.display = 'none';
       document.body.style.overflow = 'auto';
     }
-    
+
     // Fecha o modal ao clicar fora dele
     window.onclick = function(event) {
       var modal = document.getElementById('mapModal');
@@ -71,8 +78,22 @@
         document.body.style.overflow = 'auto';
       }
     }
+
+    // Função para abrir o Uber
+    function openUber(event) {
+      event.preventDefault();
+
+      // Coordenadas do seu estabelecimento
+      var latitude = -16.6839;
+      var longitude = -49.2569;
+
+      // Monta o link profundo para o Uber
+      var uberLink = "https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=" + latitude + "&dropoff[longitude]=" + longitude + "&dropoff[nickname]=Body%20Harmony";
+
+      // Abre o link do Uber
+      window.open(uberLink, '_blank');
+    }
     </script>
     
-        
 </body>
 </html>
