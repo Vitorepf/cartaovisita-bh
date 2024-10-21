@@ -60,40 +60,42 @@
     </div>
 
     <script>
-    function openModal(event) {
-      event.preventDefault();
-      document.getElementById('mapModal').style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    }
+        function openModal(event) {
+          event.preventDefault();
+          document.getElementById('mapModal').style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        }
+    
+        function closeModal() {
+          document.getElementById('mapModal').style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+    
+        // Fecha o modal ao clicar fora dele
+        window.onclick = function(event) {
+          var modal = document.getElementById('mapModal');
+          if (event.target == modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+          }
+        }
+    
+        // Função atualizada para abrir o Uber usando coordenadas
+        function openUber(event) {
+    event.preventDefault();
 
-    function closeModal() {
-      document.getElementById('mapModal').style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
+    // Coordenadas do seu estabelecimento
+    var latitude = -16.684736; // Certifique-se de que estas são as coordenadas exatas
+    var longitude = -49.266175; // Certifique-se de que estas são as coordenadas exatas
+    var nickname = encodeURIComponent('Studio Body Harmony');
 
-    // Fecha o modal ao clicar fora dele
-    window.onclick = function(event) {
-      var modal = document.getElementById('mapModal');
-      if (event.target == modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-    }
+    // Monta o link para o Uber usando as coordenadas
+    var uberLink = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${latitude}&dropoff[longitude]=${longitude}&dropoff[nickname]=${nickname}`;
 
-    // Função atualizada para abrir o Uber
-    function openUber(event) {
-      event.preventDefault();
-
-      // Nome do seu estabelecimento, codificado para URL
-      var destination = "Studio%20Body%20Harmony%20Goi%C3%A2nia%20GO";
-
-      // Monta o link para o Uber usando o nome do estabelecimento
-      var uberLink = "https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=" + destination + "&dropoff[nickname]=Studio%20Body%20Harmony";
-
-      // Abre o link do Uber
-      window.open(uberLink, '_blank');
-    }
-    </script>
+    // Abre o link do Uber
+    window.location.href = uberLink;
+  }
+        </script>
     
 </body>
 </html>
