@@ -33,33 +33,31 @@
 
     </div>
 
-  <!-- Modal para opções de aplicativo -->
-<div id="mapModal" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <span class="close-button" onclick="closeModal()">&times;</span>
-      <h2>Escolha o aplicativo:</h2>
-      <div class="modal-buttons">
-        <!-- Link do Waze com o nome do estabelecimento -->
-        <a href="https://waze.com/ul?q=Studio%20Body%20Harmony%20Goi%C3%A2nia%20GO&navigate=yes" target="_blank" rel="noopener noreferrer">
-            <img src="assets/waze-icon.png" alt="Waze">
-            <span>Abrir no Waze</span>
-        </a>
-        
-        <!-- Link do Google Maps com o nome do estabelecimento -->
-        <a href="https://maps.app.goo.gl/KKpdEhfyhibEGDRa6" target="_blank" rel="noopener noreferrer">
-          <img src="assets/google-maps-icon.png" alt="Google Maps">
-          <span>Abrir no Google Maps</span>
-        </a>
-        <!-- Link para chamar um Uber usando o nome do estabelecimento -->
-        <a href="#" onclick="openUber(event)" target="_blank" rel="noopener noreferrer">
-          <img src="assets/uber-icon.png" alt="Uber">
-          <span>Chamar um Uber</span>
-        </a>
-      </div>
+    <!-- Modal para opções de aplicativo -->
+    <div id="mapModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal()">&times;</span>
+          <h2>Escolha o aplicativo:</h2>
+          <div class="modal-buttons">
+            <!-- Link do Waze com o nome do estabelecimento -->
+            <a href="https://waze.com/ul?q=Studio%20Body%20Harmony%20Goi%C3%A2nia%20GO&navigate=yes" target="_blank" rel="noopener noreferrer">
+                <img src="assets/waze-icon.png" alt="Waze">
+                <span>Abrir no Waze</span>
+            </a>
+            
+            <!-- Link do Google Maps com o nome do estabelecimento -->
+            <a href="https://maps.app.goo.gl/KKpdEhfyhibEGDRa6" target="_blank" rel="noopener noreferrer">
+              <img src="assets/google-maps-icon.png" alt="Google Maps">
+              <span>Abrir no Google Maps</span>
+            </a>
+            <!-- Link para chamar um Uber usando o nome do estabelecimento -->
+            <a href="#" onclick="openUber(event)" target="_blank" rel="noopener noreferrer">
+              <img src="assets/uber-icon.png" alt="Uber">
+              <span>Chamar um Uber</span>
+            </a>
+          </div>
+        </div>
     </div>
-  </div>
-  
-  
 
     <script>
     function openModal(event) {
@@ -82,19 +80,19 @@
       }
     }
 
-    // Função para abrir o Uber
+    // Função atualizada para abrir o Uber
     function openUber(event) {
-  event.preventDefault();
+      event.preventDefault();
 
-  // Endereço do seu estabelecimento, codificado para URL
-  var destination = "R.%2022%2C%20328%20-%20St.%20Oeste%2C%20Goi%C3%A2nia%20-%20GO%2C%2074120-130";
+      // Nome do seu estabelecimento, codificado para URL
+      var destination = "Studio%20Body%20Harmony%20Goi%C3%A2nia%20GO";
 
-  // Monta o link para o Uber usando o endereço completo
-  var uberLink = "https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=" + destination + "&dropoff[nickname]=Studio%20Body%20Harmony";
+      // Monta o link para o Uber usando o nome do estabelecimento
+      var uberLink = "https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=" + destination + "&dropoff[nickname]=Studio%20Body%20Harmony";
 
-  // Abre o link do Uber
-  window.open(uberLink, '_blank');
-}
+      // Abre o link do Uber
+      window.open(uberLink, '_blank');
+    }
     </script>
     
 </body>
