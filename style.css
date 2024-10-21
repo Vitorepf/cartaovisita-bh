@@ -8,14 +8,15 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     margin: 0;
-    padding: 10px;
+    padding: 50px 10px 10px; /* Aumenta o espaço no topo da página */
 }
+
 
 .card {
     max-width: 400px;
     width: 100%;
     background-color: #fff;
-    margin: 50px auto;
+    margin: 100px auto; /* Aumentamos a margem superior para centralizar melhor */
     padding: 2rem 1rem;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -23,15 +24,16 @@ body {
     text-align: center;
 }
 
+
 .logo {
-    width: 250px; /* Aumentamos o tamanho da logo */
+    width: 260px; /* Ajustamos o tamanho da logo */
     max-width: 100%;
     height: auto;
     background-color: #fff;
     padding: 0.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 auto 20px auto;
+    margin: 0 auto 30px auto; /* Aumentamos a margem inferior */
     display: block;
     transition: transform 0.3s ease;
 }
@@ -42,20 +44,20 @@ body {
 
 p {
     color: #2c6b9d;
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Aumentamos um pouco o tamanho do subtítulo */
     margin-bottom: 1.5rem;
     font-weight: bold;
 }
 
 .contact-info {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     text-align: center;
 }
 
 .contact-info p {
-    font-size: 0.95rem;
+    font-size: 1rem; /* Aumentamos o tamanho da fonte para legibilidade */
     color: #666;
-    margin: 0.5rem 0;
+    margin-bottom: 1rem;
 }
 
 .contact-info a {
@@ -69,15 +71,15 @@ p {
 }
 
 .buttons {
-    margin-top: 1.5rem;
+    margin-top: 3rem; /* Aumentamos o espaço antes dos botões */
 }
 
 .buttons a {
     display: inline-block;
     background-color: #fff;
     border-radius: 50%;
-    padding: 0.75rem;
-    margin: 0 0.5rem;
+    padding: 1rem; /* Aumentei o padding para dar mais espaço ao botão */
+    margin: 0 0.75rem; /* Aumentei o espaço entre os botões */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -89,64 +91,67 @@ p {
 }
 
 .buttons img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem; /* Aumentei o tamanho dos ícones */
+    height: 2rem;
 }
 
 /* Responsividade para tablets */
 @media (max-width: 1024px) {
     .card {
         margin: 40px auto;
-        padding: 1.5rem;
+        padding: 2.5rem;
     }
 
     .logo {
-        width: 220px; /* Ajustamos proporcionalmente */
+        width: 230px; /* Ajustamos proporcionalmente */
     }
 
     p {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     .contact-info p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .buttons img {
-        width: 1.4rem;
-        height: 1.4rem;
+        width: 1.6rem;
+        height: 1.6rem;
     }
 }
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 600px) {
     .card {
-        width: 90%;
+        width: 95%; /* Usamos mais a largura disponível */
         max-width: 350px;
-        margin: 20px auto;
-        padding: 1rem;
+        margin: 30px auto;
+        padding: 2rem;
+        margin: 100px auto; 
     }
 
     .logo {
-        width: 180px; /* Aumentamos o tamanho para dispositivos móveis */
+        width: 400px; /* Ajustamos o tamanho para dispositivos móveis */
+        margin-bottom: 20px;
     }
 
     p {
-        font-size: 1rem;
-        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
     }
 
     .contact-info p {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
+        margin-bottom: 1rem; /* Mais espaço entre as linhas de contato */
     }
 
     .buttons a {
-        padding: 0.5rem;
-        margin: 0 0.3rem;
+        padding: 0.75rem;
+        margin: 0 0.5rem;
     }
 
     .buttons img {
-        width: 1.2rem;
-        height: 1.2rem;
+        width: 2rem;
+        height:2rem;
     }
 }
