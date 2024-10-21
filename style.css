@@ -120,6 +120,39 @@ p {
     }
 }
 
+/* Estilos para o botão de mapa com opções */
+.map-button {
+    position: relative;
+    display: inline-block;
+}
+
+.map-options {
+    display: none;
+    position: absolute;
+    top: -120px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.map-options a {
+    display: block;
+    color: #2c6b9d;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+.map-options a:hover {
+    background-color: #f2f2f2;
+}
+
+
 /* Responsividade para dispositivos móveis */
 @media (max-width: 600px) {
     .card {

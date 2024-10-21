@@ -25,12 +25,40 @@
             <a href="https://www.instagram.com/bodyharmony.gyn/" target="_blank" rel="noopener noreferrer" title="Visite nosso Instagram">
                 <img src="assets/instagram.png" alt="Instagram - Body Harmony">
             </a>
-            <a href="https://maps.app.goo.gl/X6obGMt2dqDMvJeLA" target="_blank" rel="noopener noreferrer" title="Veja nossa localização no Google Maps">
-                <img src="assets/google-maps.png" alt="Localização no Google Maps">
-            </a>
+            <!-- Botão de mapa com opções -->
+<div class="map-button">
+    <a href="#" onclick="openMapOptions(event)" title="Veja nossa localização no mapa">
+        <img src="assets/google-maps.png" alt="Localização no mapa">
+    </a>
+    <!-- Menu de opções -->
+    <div id="map-options" class="map-options">
+        <a href="https://waze.com/ul?q=Body%20Harmony%20Goiânia%20GO" target="_blank" rel="noopener noreferrer">
+            Abrir no Waze
+        </a>
+        <a href="https://maps.google.com/?q=Body+Harmony+Goiânia+GO" target="_blank" rel="noopener noreferrer">
+            Abrir no Google Maps
+        </a>
+    </div>
+</div>
+
         </div>
 
     </div>
+    <script>
+        function openMapOptions(event) {
+            event.preventDefault();
+            var mapOptions = document.getElementById('map-options');
+            mapOptions.style.display = (mapOptions.style.display === 'block') ? 'none' : 'block';
+        }
+        document.addEventListener('click', function(event) {
+    var mapOptions = document.getElementById('map-options');
+    var mapButton = document.querySelector('.map-button a');
+    if (!mapButton.contains(event.target) && !mapOptions.contains(event.target)) {
+        mapOptions.style.display = 'none';
+    }
+});
 
+        </script>
+        
 </body>
 </html>
