@@ -26,39 +26,53 @@
                 <img src="assets/instagram.png" alt="Instagram - Body Harmony">
             </a>
             <!-- Botão de mapa com opções -->
-<div class="map-button">
-    <a href="#" onclick="openMapOptions(event)" title="Veja nossa localização no mapa">
-        <img src="assets/google-maps.png" alt="Localização no mapa">
-    </a>
-    <!-- Menu de opções -->
-    <div id="map-options" class="map-options">
-        <a href="https://waze.com/ul?q=Body%20Harmony%20Goiânia%20GO" target="_blank" rel="noopener noreferrer">
-            Abrir no Waze
-        </a>
-        <a href="https://maps.google.com/?q=Body+Harmony+Goiânia+GO" target="_blank" rel="noopener noreferrer">
-            Abrir no Google Maps
-        </a>
-    </div>
+<!-- Botão de mapa que abre o modal -->
+<a href="#" onclick="openModal(event)" title="Veja nossa localização no mapa">
+    <img src="assets/google-maps.png" alt="Localização no mapa">
+</a>
+
 </div>
 
-        </div>
-
+<!-- Modal para opções de mapa -->
+<div id="mapModal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h2>Escolha o aplicativo de mapas:</h2>
+      <div class="modal-buttons">
+        <a href="https://waze.com/ul?q=Body%20Harmony%20Goiânia%20GO&navigate=yes" target="_blank" rel="noopener noreferrer">
+          <img src="assets/waze.png" alt="Waze">
+          <span>Abrir no Waze</span>
+        </a>
+        <a href="https://maps.google.com/?q=Body+Harmony+Goiânia+GO" target="_blank" rel="noopener noreferrer">
+          <img src="assets/google-maps.png" alt="Google Maps">
+          <span>Abrir no Google Maps</span>
+        </a>
+      </div>
     </div>
-    <script>
-        function openMapOptions(event) {
-            event.preventDefault();
-            var mapOptions = document.getElementById('map-options');
-            mapOptions.style.display = (mapOptions.style.display === 'block') ? 'none' : 'block';
-        }
-        document.addEventListener('click', function(event) {
-    var mapOptions = document.getElementById('map-options');
-    var mapButton = document.querySelector('.map-button a');
-    if (!mapButton.contains(event.target) && !mapOptions.contains(event.target)) {
-        mapOptions.style.display = 'none';
+  </div>
+  
+  <script>
+    function openModal(event) {
+      event.preventDefault();
+      document.getElementById('mapModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
     }
-});
-
-        </script>
+    
+    function closeModal() {
+      document.getElementById('mapModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Fecha o modal ao clicar fora dele
+    window.onclick = function(event) {
+      var modal = document.getElementById('mapModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+    </script>
+    
         
 </body>
 </html>
