@@ -49,13 +49,21 @@ p {
 
 .contact-info {
     margin-top: 2rem;
-    text-align: center;
+    display: grid; /* Usando grid para organizar elementos */
+    grid-template-columns: 1fr; /* Uma coluna ocupando toda a largura */
+    gap: 1rem; /* Espaçamento consistente entre os elementos */
+    justify-items: center; /* Centraliza os elementos horizontalmente */
+    width: 100%;
 }
 
-.contact-info p {
-    font-size: 1rem; /* Aumentamos o tamanho da fonte para legibilidade */
+.contact-info p, 
+.contact-info a {
+    font-size: 1rem;
     color: #666;
-    margin-bottom: 1rem;
+    margin: 0; /* Remove margens para evitar desalinhamento */
+    text-align: center; /* Garante alinhamento uniforme dos textos */
+    line-height: 1.5; /* Melhora a legibilidade */
+    max-width: 300px; /* Controla a largura máxima para evitar esticar demais */
 }
 
 .contact-info a {
@@ -67,6 +75,8 @@ p {
 .contact-info a:hover {
     text-decoration: underline;
 }
+
+
 
 .buttons {
     margin-top: 3rem; /* Aumentamos o espaço antes dos botões */

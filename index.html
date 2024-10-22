@@ -1,103 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Harmony - Cartão de Visita Virtual</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Body Harmony - Cartão de Visita Virtual</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="card">
-        <img src="assets/body-harmony-logo_Prancheta 1 (1).png" alt="Logotipo da Body Harmony" class="logo">
-      
-        <p>Estética e Bem-Estar</p>
+  <div class="card">
+    <img src="assets/body-harmony-logo_Prancheta 1 (1).png" alt="Logotipo da Body Harmony" class="logo">
 
-        <div class="contact-info">
-            <p>Endereço: R. 22, 328 - St. Oeste, Goiânia - GO, 74120-130</p>
-            <p>Email: <a href="mailto:bodyharmonygyn@hotmail.com">bodyharmonygyn@hotmail.com</a></p>
-        </div>
-        
-        <div class="buttons">
-            <a href="https://wa.me/556299902040?text=Ol%C3%A1%2C%20me%20interessei%20e%20gostaria%20de%20conhecer%20o%20Studio%20Body%20Harmony" target="_blank" rel="noopener noreferrer" title="Fale conosco no WhatsApp">
-                <img src="assets/whatsapp.png" alt="WhatsApp - Contato Body Harmony">
-            </a>
-            <a href="https://www.instagram.com/bodyharmony.gyn/" target="_blank" rel="noopener noreferrer" title="Visite nosso Instagram">
-                <img src="assets/instagram.png" alt="Instagram - Body Harmony">
-            </a>
-            <!-- Botão de mapa que abre o modal -->
-            <a href="#" onclick="openModal(event)" title="Veja nossa localização no mapa">
-                <img src="assets/google-maps.png" alt="Localização no mapa">
-            </a>
-        </div>
+    <p>Estética e Bem-Estar</p>
 
+    <div class="contact-info">
+      <p>Endereço: R. 22, 328 - St. Oeste, Goiânia - GO, 74120-130</p>
+      <p>Email: <a href="mailto:bodyharmonygyn@hotmail.com">bodyharmonygyn@hotmail.com</a></p>
     </div>
 
-    <!-- Modal para opções de aplicativo -->
-    <div id="mapModal" class="modal" role="dialog" aria-modal="true">
-        <div class="modal-content">
-          <span class="close-button" onclick="closeModal()">&times;</span>
-          <h2>Escolha o aplicativo:</h2>
-          <div class="modal-buttons">
-            <!-- Link do Waze com o nome do estabelecimento -->
-            <a href="https://waze.com/ul?q=Studio%20Body%20Harmony%20Goi%C3%A2nia%20GO&navigate=yes" target="_blank" rel="noopener noreferrer">
-                <img src="assets/waze.png" alt="Waze">
-                <span>Abrir no Waze</span>
-            </a>
-            
-            <!-- Link do Google Maps com o nome do estabelecimento -->
-            <a href="https://maps.app.goo.gl/KKpdEhfyhibEGDRa6" target="_blank" rel="noopener noreferrer">
-              <img src="assets/google-maps.png" alt="Google Maps">
-              <span>Abrir no Google Maps</span>
-            </a>
-            <!-- Link para chamar um Uber usando o nome do estabelecimento -->
-            <a href="#" onclick="openUber(event)" target="_blank" rel="noopener noreferrer">
-              <img src="assets/uber.png" alt="Uber">
-              <span>Chamar um Uber</span>
-            </a>
-          </div>
-        </div>
+    <div class="buttons">
+      <a href="https://wa.me/556299902040?text=Ol%C3%A1%2C%20me%20interessei%20e%20gostaria%20de%20conhecer%20o%20Studio%20Body%20Harmony"
+        target="_blank" rel="noopener noreferrer" title="Fale conosco no WhatsApp">
+        <img src="assets/whatsapp.png" alt="WhatsApp - Contato Body Harmony">
+      </a>
+      <a href="https://www.instagram.com/bodyharmony.gyn/" target="_blank" rel="noopener noreferrer"
+        title="Visite nosso Instagram">
+        <img src="assets/instagram.png" alt="Instagram - Body Harmony">
+      </a>
+      <!-- Botão de mapa que abre o modal -->
+      <a href="#" onclick="openModal(event)" title="Veja nossa localização no mapa">
+        <img src="assets/google-maps.png" alt="Localização no mapa">
+      </a>
     </div>
 
-    <script>
-        function openModal(event) {
-          event.preventDefault();
-          document.getElementById('mapModal').style.display = 'block';
-          document.body.style.overflow = 'hidden';
-        }
-    
-        function closeModal() {
-          document.getElementById('mapModal').style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-    
-        // Fecha o modal ao clicar fora dele
-        window.onclick = function(event) {
-          var modal = document.getElementById('mapModal');
-          if (event.target == modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-          }
-        }
-    
-        // Função atualizada para abrir o Uber usando coordenadas
-        function openUber(event) {
-    event.preventDefault();
+  </div>
 
-    // Coordenadas do seu estabelecimento
-    var latitude = -16.690313266254392;
-    var longitude = -49.267392124737704;
+  <!-- Modal para opções de aplicativo -->
+  <div id="mapModal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h2>Escolha o aplicativo:</h2>
+      <div class="modal-buttons">
+        <!-- Link do Waze com coordenadas -->
+        <a href="https://waze.com/ul?ll=-16.690313266254392%2C-49.267392124737704&navigate=yes" target="_blank"
+          rel="noopener noreferrer">
+          <img src="assets/waze.png" alt="Waze">
+          <span>Abrir no Waze</span>
+        </a>
 
 
-    var nickname = encodeURIComponent('Studio Body Harmony');
+        <!-- Link do Google Maps com o nome do estabelecimento -->
+        <a href="https://maps.app.goo.gl/KKpdEhfyhibEGDRa6" target="_blank" rel="noopener noreferrer">
+          <img src="assets/google-maps.png" alt="Google Maps">
+          <span>Abrir no Google Maps</span>
+        </a>
+        <!-- Link para chamar um Uber usando o nome do estabelecimento -->
+        <a href="#" onclick="openUber(event)" target="_blank" rel="noopener noreferrer">
+          <img src="assets/uber.png" alt="Uber">
+          <span>Chamar um Uber</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
-    // Monta o link para o Uber usando as coordenadas
-    var uberLink = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${latitude}&dropoff[longitude]=${longitude}&dropoff[nickname]=${nickname}`;
+  <script>
+    function openModal(event) {
+      event.preventDefault();
+      document.getElementById('mapModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
 
-    // Abre o link do Uber
-    window.location.href = uberLink;
-  }
-        </script>
-    
+    function closeModal() {
+      document.getElementById('mapModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Fecha o modal ao clicar fora dele
+    window.onclick = function (event) {
+      var modal = document.getElementById('mapModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Função atualizada para abrir o Uber usando coordenadas
+    function openUber(event) {
+      event.preventDefault();
+
+      // Coordenadas do seu estabelecimento
+      var latitude = -16.690313266254392;
+      var longitude = -49.267392124737704;
+
+
+      var nickname = encodeURIComponent('Studio Body Harmony');
+
+      // Monta o link para o Uber usando as coordenadas
+      var uberLink = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${latitude}&dropoff[longitude]=${longitude}&dropoff[nickname]=${nickname}`;
+
+      // Abre o link do Uber
+      window.location.href = uberLink;
+    }
+  </script>
+
 </body>
+
 </html>
